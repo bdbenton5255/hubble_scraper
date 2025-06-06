@@ -1,0 +1,1 @@
+An image scraper that uses Python's BeautifulSoup to download all images from a given url.
