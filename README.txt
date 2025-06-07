@@ -1,1 +1,1 @@
-An image scraper that uses Python's BeautifulSoup to download all images from a given url.
+An image scraper that uses Python's BeautifulSoup to download high resolution images from the Hubble Space Telescope online archives.
