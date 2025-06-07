@@ -2,9 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
-url = input('Provide url: \n')
+for i in range(37):
 
-r  = requests.get(url)
-soup = BeautifulSoup(r.text, 'html.parser')
+    url = "https://esahubble.org/images/archive/category/galaxies/page/" + str(i + 1)
+    r  = requests.get(url)
+    soup = BeautifulSoup(r.text, 'html.parser')
 
-print(soup.title.text)
+    print(soup.title.text + " page: " + str(i + 1))
