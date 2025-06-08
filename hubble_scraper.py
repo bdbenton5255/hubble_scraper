@@ -3,6 +3,7 @@ import os
 import time
 import urllib
 import requests
+import urllib.request
 from bs4 import BeautifulSoup
 
 try:
@@ -34,7 +35,10 @@ for links in image_links:
 
         time.sleep(1)
 
-        #urllib.request.urlretrieve(high_res_image_link, "galaxy_images/galaxy_" + str(image_number) +".jpg")
+        opener = urllib.request.build_opener()
+        opener.addheaders = [('User-agent', 'Mozilla/5.0')]
+        urllib.request.install_opener(opener)
+        urllib.request.urlretrieve(high_res_image_link, "galaxy_images/galaxy_" + str(image_number) +".jpg")
 
         print("Image " + "galaxy_" + str(image_number) + ".jpg downloaded!")
         image_number += 1
