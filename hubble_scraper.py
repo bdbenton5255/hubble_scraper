@@ -17,7 +17,6 @@ for pages in range(37):
 
     print("Downloading images from page " + str(pages+1))
 
-    url = 'https://esahubble.org/images/archive/category/galaxies/page/1/'
     reqs = requests.get(url)
     soup = BeautifulSoup(reqs.text, 'html.parser')
     image_script = soup.find('script')
