@@ -11,6 +11,8 @@ try:
 except FileExistsError:
     print("galaxy_images directory already exists.")
 
+image_number = 0
+
 for pages in range(37):
 
     url = 'https://esahubble.org/images/archive/category/galaxies/page/' + str(pages+1)
@@ -21,7 +23,6 @@ for pages in range(37):
     soup = BeautifulSoup(reqs.text, 'html.parser')
     image_script = soup.find('script')
     image_links = re.findall(r"url\s*:\s*'([^']+)'", str(image_script))
-    image_number = 0
 
     for links in image_links:
 
